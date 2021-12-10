@@ -1,0 +1,27 @@
+$primary: #00B4D8;
+
+@import 'bulma';
+
+// remove gap between notificaitons and header
+.notification:not(:last-child) {
+  margin-bottom: 0;
+}
+
+// add gap for header logo
+.logo {
+  margin-left: 2vw;
+}
+
+// reduce bulma footer size
+.footer {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+// to keep footer on bottom
+.flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
