@@ -21,7 +21,14 @@ $primary: #00B4D8;
 // to keep footer on bottom
 .flex-wrapper {
   display: flex;
-  min-height: 100vh;
+  min-height: calc(100vh - 52px);
   flex-direction: column;
   justify-content: space-between;
+}
+
+// search row on index page
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
 }

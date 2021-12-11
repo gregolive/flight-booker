@@ -4,4 +4,5 @@ class Airport < ApplicationRecord
 
   validates :code, presence: true, uniqueness: true
   validates :city, presence: true
+  
 end

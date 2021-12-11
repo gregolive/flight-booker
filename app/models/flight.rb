@@ -4,4 +4,6 @@ class Flight < ApplicationRecord
 
   validates :departure_time, presence: true
   validates :flight_duration, presence: true
+
+  scope :departure_times, -> { distinct.pluck(:departure_time) }
 end
