@@ -24,7 +24,7 @@
     <div class="control">
       <%= f.label "Passengers", class: "label" %>
       <div class="select">
-        <%= f.select(:passengers, (1..6), selected: params[:passengers]) %>
+        <%= f.select(:passengers, (1..6), selected: @passengers) %>
       </div>
     </div>
   </div>
