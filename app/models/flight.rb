@@ -5,5 +5,5 @@ class Flight < ApplicationRecord
   validates :departure_time, presence: true
   validates :flight_duration, presence: true
 
-  scope :departure_times, -> { distinct.pluck(:departure_time) }
+  scope :unique_departure_times, -> { pluck(:departure_time).map { |a| a.strftime('%B %d, %Y') }.uniq }
 end

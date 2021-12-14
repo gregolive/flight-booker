@@ -32,3 +32,8 @@ $primary: #00B4D8;
   flex-direction: row;
   gap: 2em;
 }
+
+// add space for search results
+.container:not(:last-child) {
+  padding-bottom: 2em;
+}

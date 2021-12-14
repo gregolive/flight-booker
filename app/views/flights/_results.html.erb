@@ -1,0 +1,30 @@
+<% unless @departure_airport.blank? && @arrival_airport.blank? && @departure_time.blank? %>
+  <h2 class="title is-4">Search results</h2>
+  <% if @flights.any? %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Departure Airport</th>
+          <th>Arrival Airport</th>
+          <th>Date</th>
+          <th>Departs at</th>
+          <th>Flight duration</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @flights.each do |flight| %>
+          <tr>
+            <td><%= flight.departure_airport.city %></td>
+            <td><%= flight.arrival_airport.city %></td>
+            <td><%= flight.departure_time.strftime('%F') %></td>
+            <td><%= flight.departure_time.strftime('%H:%M') %></td>
+            <td><%= flight.flight_duration %> minutes</td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p>Sorry there are no flights available for your search. 😞</p>
+  <% end %>
+<% end %>

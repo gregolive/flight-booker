@@ -17,10 +17,6 @@ end
 # Flight Model
 
 dates = (Date.today..(Date.today + 1.month)).to_a
-
-times = []
-Date.today.step(Date.today + 1, 1.0 / (24 * 60)) { |t| times.push(t) }
-
 airports = [4, 5, 6, 7, 8, 9, 10, 13, 14]
 
 airports.each do |depart|
@@ -30,9 +26,8 @@ airports.each do |depart|
     length = rand(90..300)
     dates.each do |d|
       rand(1..3).times do
-        t = times[rand(times.length)].to_datetime
-        Flight.create!(
-          departure_time: DateTime.new(d.year, d.month, d.day, t.hour, t.min, t.sec, t.zone),
+        Flight.create(
+          departure_time: DateTime.new(d.year, d.month, d.day, rand(6..23), rand(0..59)),
           flight_duration: length,
           departure_airport_id: depart,
           arrival_airport_id: arrive

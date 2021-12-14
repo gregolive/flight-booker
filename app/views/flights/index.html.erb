@@ -3,62 +3,15 @@
     <div class="columns">
       <div class="column is-two-thirds">
         <h1 class="title is-3">Book a Flight</h1>
-        <div class="row">
-          <div class="field">
-            <label class="label">Where from?</label>
-            <div class="control">
-              <div class="select">
-                <select>
-                  <option>Depart from</option>
-                  <% @airports.each do |airport| %>
-                    <option><%= airport.city %> (<%= airport.code %>)</option>
-                  <% end %>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="label">Where to?</label>
-            <div class="control">
-              <div class="select">
-                <select>
-                  <option>Fly to</option>
-                  <% @airports.each do |airport| %>
-                    <option><%= airport.city %> (<%= airport.code %>)</option>
-                  <% end %>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="label">Date</label>
-            <div class="control">
-              <div class="select">
-                <select>
-                  <option>Select date</option>
-                  <% Flight.departure_times.each do |time| %>
-                    <option><%= time.strftime('%F') %></option>
-                  <% end %>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="label">Passengers</label>
-            <div class="control">
-              <div class="select">
-                <select>
-                  <% (1..8).each do |num| %>
-                    <option><%= num %></option>
-                  <% end %>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
+        <%= render 'search' %>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <div class="columns">
+      <div class="column is-two-thirds">
+        <%= render 'results' %>
       </div>
     </div>
   </div>
