@@ -3,28 +3,28 @@
     <div class="control">
       <%= f.label "Where from?", class: "label" %>
       <div class="select">
-        <%= f.select(:departure_airport, Airport.city, include_blank: "Depart") %>
+        <%= f.select(:departure_airport, Airport.city, selected: @departure_airport, include_blank: "Depart") %>
       </div>
     </div>
 
     <div class="control">
       <%= f.label "Where to?", class: "label" %>
       <div class="select">
-        <%= f.select(:arrival_airport, Airport.city, include_blank: "Arrive") %>
+        <%= f.select(:arrival_airport, Airport.city, selected: @arrival_airport, include_blank: "Arrive") %>
       </div>
     </div>
 
     <div class="control">
       <%= f.label "Date", class: "label" %>
       <div class="select">
-        <%= f.select(:departure_time, (Date.today.. 1.month.from_now), include_blank: "Select date") %>
+        <%= f.select(:departure_time, (Date.today.. 1.month.from_now), selected: @departure_time, include_blank: "Select date") %>
       </div>
     </div>
 
     <div class="control">
       <%= f.label "Passengers", class: "label" %>
       <div class="select">
-        <%= f.select(:passengers, (1..6)) %>
+        <%= f.select(:passengers, (1..6), selected: params[:passengers]) %>
       </div>
     </div>
   </div>
