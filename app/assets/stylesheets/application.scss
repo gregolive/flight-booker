@@ -1,4 +1,5 @@
 $primary: #00B4D8;
+$link: #00B4D8;
 
 @import 'bulma';
 
@@ -36,4 +37,8 @@ $primary: #00B4D8;
 // add space for search results
 .container:not(:last-child) {
   padding-bottom: 2em;
+}
+
+.columns {
+  justify-content: center;
 }

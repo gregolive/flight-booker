@@ -15,6 +15,8 @@ class FlightsController < ApplicationController
       departure_airport_id: Airport.where(city: @departure_airport),
       arrival_airport_id: Airport.where(city: @arrival_airport),
       departure_time: (@start_time..@end_time)
-    )
+    ).order(:departure_time)
+
+    @booking = Booking.new
   end
 end

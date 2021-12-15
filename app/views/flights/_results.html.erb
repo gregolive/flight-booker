@@ -22,6 +22,14 @@
             <td><%= flight.departure_time.strftime('%F') %></td>
             <td><%= flight.departure_time.strftime('%H:%M') %></td>
             <td><%= flight.flight_duration %> minutes</td>
+            <td>
+              <%= simple_form_for(@booking, url: new_booking_path, method: :get) do |f| %>
+                <%= f.hidden_field :flight, value: flight.id %>
+                <%= button_tag type: 'submit', class: "button is-small is-primary is-light" do %>
+                  <span class="icon"><i class="fas fa-plane" aria-hidden="true"></i></span>
+                <% end %>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>

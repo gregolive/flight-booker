@@ -1,0 +1,23 @@
+<h2 class="title is-4">Flight details</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Flight No.</th>
+      <th>Departure Airport</th>
+      <th>Arrival Airport</th>
+      <th>Date</th>
+      <th>Departs at</th>
+      <th>Flight duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @flight.id %></td>
+      <td><%= @flight.departure_airport.city %> (<%= @flight.departure_airport.code %>)</td>
+      <td><%= @flight.arrival_airport.city %> (<%= @flight.arrival_airport.code %>)</td>
+      <td><%= @flight.departure_time.strftime('%F') %></td>
+      <td><%= @flight.departure_time.strftime('%H:%M') %></td>
+      <td><%= @flight.flight_duration %> minutes</td>
+    </tr>
+  </tbody>
+</table>

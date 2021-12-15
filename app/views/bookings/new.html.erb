@@ -1,0 +1,15 @@
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-three-quarters">
+        <h1 class="title is-3">Book your flight to <strong><%= @flight.arrival_airport.city %></strong></strong></h1>
+        
+      </div>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column is-three-quarters">
+      <%= render 'flight' %>
+    </div>
+  </div>
+</section>
