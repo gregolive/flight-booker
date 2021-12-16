@@ -1,5 +1,17 @@
 class BookingsController < ApplicationController
-=begin
+  before_action :set_booking, only: %i[ show ]
+
+  def new
+    @booking = Booking.new
+    @flight = Flight.find(params[:booking][:flight])
+    @num_passengers = params[:booking][:num_passengers].to_i
+    @passengers = []
+
+    @num_passengers.times do
+      @passengers << Passenger.new
+    end
+  end
+
   def create
     @booking = Booking.new
 
@@ -13,10 +25,13 @@ class BookingsController < ApplicationController
       end
     end
   end
-=end
 
-  def new
-    @booking = Booking.new
-    @flight = Flight.find(params[:booking][:flight])
+  def show
+  end
+
+  private
+
+  def set_booking
+    @booking = Booking.find(params[:id])
   end
 end

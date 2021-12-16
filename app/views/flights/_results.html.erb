@@ -25,6 +25,7 @@
             <td>
               <%= simple_form_for(@booking, url: new_booking_path, method: :get) do |f| %>
                 <%= f.hidden_field :flight, value: flight.id %>
+                <%= f.hidden_field :num_passengers, value: params[:num_passengers] %>
                 <%= button_tag type: 'submit', class: "button is-small is-primary is-light" do %>
                   <span class="icon"><i class="fas fa-plane" aria-hidden="true"></i></span>
                 <% end %>

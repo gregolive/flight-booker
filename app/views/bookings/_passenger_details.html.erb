@@ -1,0 +1,34 @@
+<h2 class="title is-4">Passenger details</h2>
+<%= simple_form_for(@booking, defaults: { required: false }) do |f| %>
+  <%= f.hidden_field :flight, value: @flight.id %>
+  <%= f.hidden_field :num_passengers, value: @num_passengers %>
+  <%= f.error_notification %>
+  <% @passengers.each_with_index do |passenger, num| %>
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label">Passenger <%= (num + 1) %>:</label>
+      </div>
+      <%= f.simple_fields_for :passengers do |booking_form| %>
+        <div class="field-body">
+          <div class="field">
+            <p class="control is-expanded has-icons-left">
+              <%= booking_form.input :name, placeholder: "Name", input_html: { class: "input" }, wrapper: false, label: false %>
+              <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control is-expanded has-icons-left has-icons-right">
+              <%= booking_form.input :email, placeholder: "Email", input_html: { class: "input" }, wrapper: false, label: false %>
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+            </p>
+          </div>
+        </div>
+      <% end %>  
+    </div>
+  <% end %>
+  <%= f.button :submit, 'Continue Booking', class: "button is-primary" %>
+<% end %>

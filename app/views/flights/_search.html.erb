@@ -1,3 +1,4 @@
+<h1 class="title is-3">Book a Flight</h1>
 <%= form_with url: "/flights", method: :get do |f| %>
   <div class="row">
     <div class="control">
@@ -24,7 +25,7 @@
     <div class="control">
       <%= f.label "Passengers", class: "label" %>
       <div class="select">
-        <%= f.select(:passengers, (1..6), selected: @passengers) %>
+        <%= f.select(:num_passengers, (1..6), selected: params[:num_passengers]) %>
       </div>
     </div>
   </div>

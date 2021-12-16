@@ -3,7 +3,6 @@ class FlightsController < ApplicationController
     @departure_airport = params[:departure_airport]
     @arrival_airport = params[:arrival_airport]
     @departure_time = params[:departure_time]
-    @passengers = params[:passengers]
 
     unless @departure_time.blank?
       @time = DateTime.parse(@departure_time)

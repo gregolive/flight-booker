@@ -36,9 +36,16 @@ $link: #00B4D8;
 
 // add space for search results
 .container:not(:last-child) {
-  padding-bottom: 2em;
+  padding-bottom: 3em;
 }
 
+// center content on screen
 .columns {
   justify-content: center;
+}
+
+@media screen and (min-width: 769px), print {
+  .field-body {
+    flex-grow: 6;
+  }
 }
