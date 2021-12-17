@@ -44,8 +44,14 @@ $link: #00B4D8;
   justify-content: center;
 }
 
+// grow size of passenger detail inputs relative to label
 @media screen and (min-width: 769px), print {
   .field-body {
     flex-grow: 6;
   }
+}
+
+// add space between 'Continue Booking' button and passenger form
+.button.is-primary.lowered {
+  margin-top: 15px;
 }
