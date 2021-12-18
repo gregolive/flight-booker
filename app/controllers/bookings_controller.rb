@@ -1,19 +1,18 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: %i[ show ]
+  before_action :set_flight, only: %i[ new create ]
 
   def new
     @booking = Booking.new
-    @flight = Flight.find(params[:booking][:flight])
-    @booking.flight = @flight
-    @num_passengers = params[:booking][:num_passengers].to_i
 
-    @num_passengers.times do
-      @booking.passengers.build
-    end
+    @num_passengers = params[:booking][:num_passengers].to_i
+    @num_passengers.times { @booking.passengers.build }
   end
 
   def create
-    @booking = Booking.new
+    @booking = Booking.create(booking_params)
+    @booking.passengers.build(params[:booking][:passengers])
+    @booking.flight = @flight
 
     respond_to do |format|
       if @booking.save
@@ -34,5 +33,13 @@ class BookingsController < ApplicationController
 
   def set_booking
     @booking = Booking.find(params[:id])
+  end
+
+  def set_flight
+    @flight = Flight.find(params[:booking][:flight])
+  end
+
+  def booking_params
+    params.require(:booking).permit(passengers_attributes: [ :id, :name, :email ])
   end
 end
