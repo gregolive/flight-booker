@@ -1,17 +1,16 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: %i[ show ]
-  before_action :set_flight, only: %i[ new create ]
+  before_action :set_booking, only: %i[show]
+  before_action :set_flight, only: %i[new create]
 
   def new
     @booking = Booking.new
 
     @num_passengers = params[:booking][:num_passengers].to_i
-    @num_passengers.times { @booking.passengers.build }
+    @num_passengers.times { @booking.passengers.build(params[:booking][:passengers]) }
   end
 
   def create
     @booking = Booking.create(booking_params)
-    @booking.passengers.build(params[:booking][:passengers])
     @booking.flight = @flight
 
     respond_to do |format|
@@ -27,6 +26,7 @@ class BookingsController < ApplicationController
 
   def show
     @flight = @booking.flight
+    @passengers = @booking.passengers
   end
 
   private
@@ -40,6 +40,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(passengers_attributes: [ :id, :name, :email ])
+    params.require(:booking).permit(passengers_attributes: %i[id name email])
   end
 end

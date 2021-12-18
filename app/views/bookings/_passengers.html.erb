@@ -1,0 +1,19 @@
+<h2 class="title is-4">Passenger details</h2>
+<table class="table is-hoverable">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @passengers.each_with_index do |passenger, num| %>
+    <tr>
+      <td><%= (num + 1) %></td>
+      <td><%= passenger.name %></td>
+      <td><%= passenger.email %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
