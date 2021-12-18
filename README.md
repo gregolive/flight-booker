@@ -1,24 +1,24 @@
-# README
+# bookr
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Rails app for booking one way flights.
 
-Things you may want to cover:
+## Live demo
 
-* Ruby version
+Avaliable via [Heroku](https://tranquil-anchorage-20291.herokuapp.com/) 👈
 
-* System dependencies
+## Features
 
-* Configuration
+- Styling via Bulma gem
+- RESTful design
+- CRUD (or partial CRUD) operations for airports, flights, passengers, and bookings
+- Flight database seeded via 'seeds.rb'
+- Passenger objects created within booking form
 
-* Database creation
+## To add
 
-* Database initialization
+- Booking confirmation numbers
+- Search for bookings
 
-* How to run the test suite
+## Ruby version
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+2.7.4
