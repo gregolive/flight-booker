@@ -13,6 +13,7 @@ Avaliable via [Heroku](https://tranquil-anchorage-20291.herokuapp.com/) 👈
 - CRUD (or partial CRUD) operations for airports, flights, passengers, and bookings
 - Flight database seeded via 'seeds.rb'
 - Passenger objects created within booking form
+- Conformation emails sent upon completion of booking
 
 ## To add
 
