@@ -4,8 +4,9 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Flight booking confirmation</h1>
-    <p><%= @passenger.name %> you have booked a flight.<br></p>
-    <p>Thanks for booking and have a great day!</p>
+    <h1>Your flight to <%= @flight.arrival_airport.city %></h1>
+    <p><%= @passenger.name %>, we are sending this email to confirm your flight booking from <%= @flight.departure_airport.city %> 
+      to <%= @flight.arrival_airport.city %> at <%= @flight.departure_time.strftime('%H:%M') %> on <%= @flight.departure_time.strftime('%B %d, %Y') %>.<br></p>
+    <p>Thanks for using bookr!</p>
   </body>
 </html>

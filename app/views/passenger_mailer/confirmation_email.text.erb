@@ -1,6 +1,7 @@
-Welcome to example.com, <%= @passenger.name %>
+Your flight to <%= @flight.arrival_airport.city %>
 ===============================================
 
-To login to the site, just follow this link.
+<%= @passenger.name %>, we are sending this email to confirm your flight booking from <%= @flight.departure_airport.city %> 
+to <%= @flight.arrival_airport.city %> at <%= @flight.departure_time.strftime('%H:%M') %> on <%= @flight.departure_time.strftime('%B %d, %Y') %>.
 
-Thanks for joining and have a great day!
+Thanks for using bookr!
