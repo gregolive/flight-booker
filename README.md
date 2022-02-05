@@ -4,7 +4,7 @@ A Rails app for booking one way flights.
 
 ## Live demo
 
-Avaliable via [Heroku](https://tranquil-anchorage-20291.herokuapp.com/) 👈
+Avaliable via [Heroku](https://bookr-flights.herokuapp.com/) 👈
 
 ## Features
 
